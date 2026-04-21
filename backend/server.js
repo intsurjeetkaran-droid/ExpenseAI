@@ -9,7 +9,8 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://expenseai-dck9.onrender.com'
+    'https://expenseai-dck9.onrender.com',
+    'https://expenseai-frontend-y2ju.onrender.com'
   ],
   credentials: true
 }));
