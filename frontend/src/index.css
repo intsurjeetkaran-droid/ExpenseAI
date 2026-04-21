@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-slate-950 text-white antialiased;
+    overflow-x: hidden;
+    min-width: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-500/50;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-xl border border-white/10;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-300;
+  }
+
+  /* Select dropdown — needs solid bg so options are readable */
+  select.input-field {
+    @apply bg-slate-800 border-white/20;
+    color-scheme: dark;
+  }
+
+  select.input-field option {
+    @apply bg-slate-800 text-white;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .card-productive {
+    @apply bg-gradient-to-br from-productive-500/20 to-productive-600/10 border-productive-500/30;
+  }
+
+  .card-unproductive {
+    @apply bg-gradient-to-br from-unproductive-500/20 to-unproductive-600/10 border-unproductive-500/30;
+  }
+
+  .card-savings {
+    @apply bg-gradient-to-br from-savings-500/20 to-savings-600/10 border-savings-500/30;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+}

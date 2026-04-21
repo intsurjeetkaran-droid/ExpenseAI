@@ -1,0 +1,329 @@
+================================================================================
+                    AI EXPENSE TRACKER — USER GUIDE
+================================================================================
+
+WHAT IS THIS APP?
+-----------------
+AI Expense Tracker is a smart money management tool. Before you spend money
+on anything, you describe the expense to the app and the AI tells you whether
+it's a good idea based on your budget. It also tracks everything you've spent
+so you can see where your money goes each month.
+
+Think of it as a financial advisor in your pocket — always available, always
+honest, and always based on your actual numbers.
+
+
+WHO IS IT FOR?
+--------------
+There are two types of accounts:
+
+  USERS — That's you. You register, set your income and budget goals, add
+  expenses, and get AI advice before spending.
+
+  ADMIN — The system manager. They can only view platform-wide statistics.
+  They cannot add expenses or use the app like you do.
+
+
+--------------------------------------------------------------------------------
+GETTING STARTED
+--------------------------------------------------------------------------------
+
+STEP 1 — Open the app
+  Go to: http://localhost:5173
+  You'll see the homepage. Click "Get Started" or "Register".
+
+STEP 2 — Create your account (3 steps)
+
+  Step 1 of 3 — Basic info
+    Enter your name, email, and a password (minimum 6 characters).
+
+  Step 2 of 3 — Your income
+    Enter your monthly take-home income.
+    Example: if you earn ₹50,000 per month, enter 50000.
+
+  Step 3 of 3 — Budget goals
+    Use the sliders to decide how to split your income:
+
+    🟢 Productive (recommended: 60%)
+       Essential and growth-oriented spending.
+       Examples: rent, groceries, electricity, education, healthcare.
+
+    🔴 Unproductive (recommended: 20%)
+       Fun and discretionary spending.
+       Examples: movies, dining out, shopping, gaming.
+
+    🔵 Savings (recommended: 20%)
+       Money set aside for the future.
+       Examples: emergency fund, investments, fixed deposits.
+
+    The three sliders must always add up to 100%.
+    They auto-adjust when you move one.
+
+  Click "Complete Registration" — you're logged in automatically.
+
+
+--------------------------------------------------------------------------------
+DAILY USE
+--------------------------------------------------------------------------------
+
+ADDING AN EXPENSE
+-----------------
+This is the core feature. Use it before or right after spending.
+
+1. Click "Add Expense" from the dashboard or menu.
+
+2. Fill in four fields:
+
+   Title    — What is the expense?
+              Example: "New headphones", "Electricity bill", "Online course"
+
+   Amount   — How much does it cost?
+              Example: 3500
+
+   Category — Pick the closest match from the dropdown.
+              Options: Food & Dining, Transportation, Shopping, Entertainment,
+              Bills & Utilities, Healthcare, Education, Travel, Other.
+
+   Purpose  — Why are you spending this money?
+              Be specific. The AI uses this to understand your expense.
+              Example: "Monthly electricity bill for home"
+              Not helpful: "just need it"
+
+3. Click "Get AI Suggestion".
+
+4. The AI will analyze your expense and show you:
+
+   🏷️  Category — What type of expense the AI thinks this is
+       (Productive / Unproductive / Savings)
+       You don't need to decide this yourself — the AI figures it out.
+
+   ✅ or ❌  Decision — Should you spend this money?
+       YES = fits your budget, go ahead
+       NO  = exceeds your budget or not recommended right now
+
+   📝  Reason — Why the AI made that decision.
+       It explains the budget situation clearly.
+
+   💡  Suggestion — If the AI says NO, it offers alternatives.
+       Example: "Consider waiting until next month" or "Look for a cheaper option."
+
+   📊  Budget Impact — Numbers showing:
+       - How much you've already spent in that category
+       - Your budget limit for that category
+       - What your total would be after this expense
+       - What percentage of your budget this uses
+
+5. Read the AI's analysis carefully.
+
+6. Decide:
+   - AI says YES → click "Add Expense" to save it.
+   - AI says NO  → you can still add it if you choose, but the AI is warning you.
+     The final decision is always yours.
+
+
+VIEWING YOUR EXPENSES
+---------------------
+Click "Expenses" in the menu to see your full expense history.
+
+Each expense shows:
+  - Title and amount
+  - Category and date
+  - Type (Productive / Unproductive / Savings) — set by the AI
+  - AI decision (Recommended / Not Recommended)
+  - AI reason
+
+
+UPDATING YOUR BUDGET
+--------------------
+Click "Budget Settings" to:
+  - Update your monthly income (e.g. after a salary change)
+  - Adjust your budget ratios using sliders
+
+Changes take effect immediately for future AI suggestions.
+
+
+--------------------------------------------------------------------------------
+YOUR DASHBOARD
+--------------------------------------------------------------------------------
+
+After logging in you'll see three budget cards:
+
+  🟢 Productive Budget
+     Shows your limit, how much you've spent, and what's remaining.
+     Progress bar turns red when you're close to the limit.
+
+  🔴 Unproductive Budget
+     Same as above for discretionary spending.
+
+  🔵 Savings
+     Shows your savings target and how much you've actually saved.
+
+Quick action buttons let you jump to Add Expense, View Expenses, or
+Budget Settings from one place.
+
+
+--------------------------------------------------------------------------------
+HOW THE AI WORKS
+--------------------------------------------------------------------------------
+
+The AI is powered by LLaMA 3.3 70B (via Groq). It receives:
+  - Your monthly income
+  - Your budget ratios and limits
+  - How much you've already spent this month in each category
+  - The expense details you entered (title, amount, category, purpose)
+
+It then decides:
+  1. What type of expense this is (productive / unproductive / savings)
+  2. Whether it fits within your budget
+  3. Whether to recommend it (YES or NO)
+  4. A clear explanation and suggestion
+
+The AI does NOT store your data or learn between sessions. Every suggestion
+is based on the information you provide at that moment.
+
+IMPORTANT: The AI gives advice. You make the final decision.
+
+
+--------------------------------------------------------------------------------
+EXAMPLE SCENARIOS
+--------------------------------------------------------------------------------
+
+SCENARIO A — Online course (AI says YES)
+  Title:    Web Development Course
+  Amount:   ₹5,000
+  Category: Education
+  Purpose:  Learn new skills for career growth
+
+  AI Response:
+  Type:       Productive
+  Decision:   YES — Recommended ✓
+  Reason:     This is a productive expense for education and skill development.
+              You have ₹25,000 remaining in your productive budget this month.
+              This investment in your career is well within your limits.
+  Suggestion: Great choice! Education expenses often lead to higher income
+              over time.
+  Budget:     33.3% of productive budget used after this expense.
+
+
+SCENARIO B — Gaming console (AI says NO)
+  Title:    Gaming Console
+  Amount:   ₹15,000
+  Category: Entertainment
+  Purpose:  Recreation and gaming with friends
+
+  AI Response:
+  Type:       Unproductive
+  Decision:   NO — Not Recommended ✗
+  Reason:     This would exceed your unproductive budget of ₹10,000. You've
+              already spent ₹3,000 this month, leaving ₹7,000 available.
+              This purchase would put you ₹5,000 over your limit.
+  Suggestion: Consider waiting until next month, or look for an option
+              under ₹7,000 to stay within budget.
+  Budget:     180% of unproductive budget — OVER LIMIT.
+
+
+SCENARIO C — Grocery shopping (AI says YES)
+  Title:    Monthly Groceries
+  Amount:   ₹4,000
+  Category: Food & Dining
+  Purpose:  Essential monthly grocery shopping for the family
+
+  AI Response:
+  Type:       Productive
+  Decision:   YES — Recommended ✓
+  Reason:     Groceries are an essential expense. This fits comfortably
+              within your productive budget.
+  Suggestion: Consider meal planning to reduce waste and save more.
+  Budget:     40% of productive budget used after this expense.
+
+
+--------------------------------------------------------------------------------
+TIPS
+--------------------------------------------------------------------------------
+
+DO:
+  ✓ Add expenses as soon as you spend — don't let them pile up
+  ✓ Write a clear, specific purpose — the AI uses it to give better advice
+  ✓ Check your dashboard regularly to stay aware of your spending
+  ✓ Update your income in Budget Settings if it changes
+  ✓ Read the AI's reason even when it says YES — it's informative
+
+DON'T:
+  ✗ Write vague purposes like "misc" or "stuff" — the AI can't help properly
+  ✗ Ignore AI warnings — they're based on your real numbers
+  ✗ Set unrealistic budget ratios — be honest with yourself
+  ✗ Forget to update your income after a raise or pay cut
+
+
+--------------------------------------------------------------------------------
+COLORS AT A GLANCE
+--------------------------------------------------------------------------------
+
+  🟢 Green   = Productive (essential, growth-oriented)
+  🔴 Red     = Unproductive (discretionary, entertainment)
+  🔵 Blue    = Savings (future goals, investments)
+  🟡 Yellow  = Warning (approaching budget limit)
+  🔴 Dark    = Danger (budget exceeded)
+
+
+--------------------------------------------------------------------------------
+NAVIGATION
+--------------------------------------------------------------------------------
+
+  Home            — Landing page
+  Dashboard       — Budget overview and quick actions
+  Add Expense     — Add a new expense with AI analysis
+  Expenses        — Full expense history
+  Budget Settings — Update income and budget ratios
+  Logout          — Sign out
+
+
+--------------------------------------------------------------------------------
+FREQUENTLY ASKED QUESTIONS
+--------------------------------------------------------------------------------
+
+Q: Do I need to know if my expense is productive or unproductive?
+A: No. The AI categorizes it automatically based on what you describe.
+
+Q: What if I disagree with the AI's category?
+A: You can still add the expense. The AI advises — you decide.
+   But consider why it categorized it that way before overriding.
+
+Q: What if AI says NO but I still want to spend?
+A: You can add it anyway. The AI is a guide, not a gatekeeper.
+   Just be aware of the budget impact it showed you.
+
+Q: Can I change my budget ratios later?
+A: Yes. Go to Budget Settings anytime and adjust the sliders.
+
+Q: Can I delete an expense I added by mistake?
+A: Yes. Go to the Expenses page and use the delete option.
+
+Q: How often should I use the app?
+A: Ideally every time you spend something. The more consistent you are,
+   the more accurate your budget picture will be.
+
+Q: Can I use this on my phone?
+A: Yes. The app is fully responsive and works on phones, tablets, and desktops.
+
+Q: Is my data private?
+A: Yes. Only you can see your expenses. The admin can only see platform-wide
+   statistics — not your individual expense details.
+
+Q: What if I forget my password?
+A: Contact the system administrator to reset it.
+
+
+--------------------------------------------------------------------------------
+TEST ACCOUNTS (for practice)
+--------------------------------------------------------------------------------
+
+  Email:    john@example.com
+  Password: password123
+
+  See CREDENTIALS.txt for all available test accounts.
+
+
+================================================================================
+                            Last Updated: April 2026
+================================================================================
