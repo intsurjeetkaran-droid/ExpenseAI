@@ -13,6 +13,37 @@ Think of it as a financial advisor in your pocket — always available, always
 honest, and always based on your actual numbers.
 
 
+HOW TO ACCESS THE APP?
+----------------------
+You have two options:
+
+  🌐 WEB VERSION (Recommended for Desktop/Laptop)
+     Visit: https://expenseai-frontend-y2ju.onrender.com
+     Works on any device with a web browser.
+     No installation needed.
+
+  📱 ANDROID APP (Recommended for Mobile)
+     Download the APK from:
+     https://github.com/intsurjeetkaran-droid/ExpenseAI/releases/latest
+     
+     Installation steps:
+     1. Download the APK file on your Android phone
+     2. Go to Settings → Security
+     3. Enable "Install from Unknown Sources"
+     4. Open the downloaded APK file
+     5. Tap "Install"
+     6. Open the app and start using it!
+     
+     Requirements: Android 5.1 or higher
+
+
+IMPORTANT NOTE FOR FIRST-TIME USERS
+------------------------------------
+The app is hosted on a free server that "sleeps" after 15 minutes of no use.
+If you visit the app and it takes 30-60 seconds to load, that's normal —
+the server is waking up. After that, everything works instantly.
+
+
 WHO IS IT FOR?
 --------------
 There are two types of accounts:
@@ -29,7 +60,9 @@ GETTING STARTED
 --------------------------------------------------------------------------------
 
 STEP 1 — Open the app
-  Go to: http://localhost:5173
+  🌐 Web: https://expenseai-frontend-y2ju.onrender.com
+  📱 Android: Open the installed app
+  
   You'll see the homepage. Click "Get Started" or "Register".
 
 STEP 2 — Create your account (3 steps)
@@ -318,10 +351,34 @@ A: Contact the system administrator to reset it.
 TEST ACCOUNTS (for practice)
 --------------------------------------------------------------------------------
 
+  You can create your own account or use these test accounts:
+
   Email:    john@example.com
   Password: password123
 
   See CREDENTIALS.txt for all available test accounts.
+
+
+--------------------------------------------------------------------------------
+TECHNICAL INFORMATION
+--------------------------------------------------------------------------------
+
+PLATFORM
+  Frontend: React 19 + Vite + Tailwind CSS
+  Backend:  Node.js + Express + MongoDB
+  AI Model: LLaMA 3.3 70B (via Groq API)
+  Mobile:   Capacitor 6 (Android)
+  Hosting:  Render (Free Tier)
+
+LINKS
+  Web App:    https://expenseai-frontend-y2ju.onrender.com
+  GitHub:     https://github.com/intsurjeetkaran-droid/ExpenseAI
+  Releases:   https://github.com/intsurjeetkaran-droid/ExpenseAI/releases
+  Report Bug: https://github.com/intsurjeetkaran-droid/ExpenseAI/issues
+
+DEVELOPER
+  Surjeet Karan
+  GitHub: @intsurjeetkaran-droid
 
 
 ================================================================================

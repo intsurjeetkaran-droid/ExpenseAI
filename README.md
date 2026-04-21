@@ -1,6 +1,69 @@
-# AI Expense Tracker
+# AI Expense Tracker 🚀
 
 A full-stack expense management platform powered by Groq AI. Users track spending, set budgets, and get real-time AI recommendations. Admins monitor the platform through a separate analytics dashboard.
+
+## 🌐 Live Demo
+
+- **Web App:** https://expenseai-frontend-y2ju.onrender.com
+- **Backend API:** https://expenseai-dck9.onrender.com/api
+
+## 📱 Download Android App
+
+**Latest Release:** [v1.0.0](https://github.com/intsurjeetkaran-droid/ExpenseAI/releases/latest)
+
+Download the APK and install on your Android device (Android 5.1+)
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19 + Vite, Tailwind CSS v3, Framer Motion, React Router DOM v7 |
+| Backend | Node.js, Express.js |
+| Database | MongoDB + Mongoose |
+| Auth | JWT (7-day expiry), bcryptjs |
+| AI | Groq API — LLaMA 3.3 70B Versatile |
+| Mobile | Capacitor 6 (Android) |
+
+---
+
+## Features
+
+### 🔐 Authentication
+- User registration with 3-step onboarding
+- Secure login with JWT tokens
+- Role-based access (User/Admin)
+
+### 💰 Expense Management
+- Add expenses with AI analysis
+- View expense history
+- Edit and delete expenses
+- Category-based organization
+
+### 🤖 AI-Powered Insights
+- Automatic expense categorization (Productive/Unproductive/Savings)
+- Smart budget recommendations
+- Real-time spending analysis
+- Personalized financial advice
+
+### 📊 Budget Management
+- Set monthly income
+- Configure budget allocation with sliders
+- Visual budget tracking
+- Real-time spending limits
+
+### 📈 Dashboard
+- Budget overview cards
+- Spending progress bars
+- Quick action buttons
+- Responsive design
+
+### 👨‍💼 Admin Panel
+- System-wide statistics
+- User management
+- Risk user monitoring
+- Platform analytics
 
 ---
 
@@ -115,7 +178,16 @@ top_p: 0.9
 
 ## Setup
 
-### Prerequisites
+### 🌐 Use Live Version (Recommended)
+
+**Web App:** https://expenseai-frontend-y2ju.onrender.com  
+**Android App:** [Download APK](https://github.com/intsurjeetkaran-droid/ExpenseAI/releases/latest)
+
+No setup required! Just visit the web app or install the Android APK.
+
+### 🛠️ Local Development
+
+#### Prerequisites
 - Node.js v16+
 - MongoDB (local or Atlas)
 - Groq API key — [console.groq.com/keys](https://console.groq.com/keys)
@@ -172,6 +244,25 @@ cd frontend && npm run dev
 | http://localhost:5173/admin | Admin dashboard |
 | http://localhost:5173/dashboard | User dashboard |
 | http://localhost:5000 | Backend API |
+
+---
+
+## 📱 Mobile App (Android)
+
+### Download
+Get the latest APK from [Releases](https://github.com/intsurjeetkaran-droid/ExpenseAI/releases/latest)
+
+### Build from Source
+```bash
+cd frontend
+npm install
+npm run build
+npx cap sync android
+cd android
+./gradlew assembleDebug
+```
+
+APK location: `frontend/android/app/build/outputs/apk/debug/app-debug.apk`
 
 ---
 
@@ -326,3 +417,42 @@ See `CREDENTIALS.txt` for all login details.
 - JWT tokens expire in 7 days
 - Role-based route protection on all endpoints
 - Registration endpoint forces `role: 'user'` — admin creation is separate
+- HTTPS enabled in production
+- CORS configured for security
+
+---
+
+## 🚀 Deployment
+
+### Production URLs
+- **Frontend:** https://expenseai-frontend-y2ju.onrender.com
+- **Backend:** https://expenseai-dck9.onrender.com
+- **Platform:** Render (Free Tier)
+
+### Note
+Free tier services may sleep after 15 minutes of inactivity. First request may take 30-60 seconds to wake up.
+
+---
+
+## 📄 License
+
+MIT License - feel free to use this project for learning or personal use.
+
+---
+
+## 👨‍💻 Developer
+
+**Surjeet Karan**  
+GitHub: [@intsurjeetkaran-droid](https://github.com/intsurjeetkaran-droid)
+
+---
+
+## 🐛 Issues & Feedback
+
+Found a bug or have a suggestion? [Open an issue](https://github.com/intsurjeetkaran-droid/ExpenseAI/issues)
+
+---
+
+## ⭐ Support
+
+If you find this project helpful, please give it a star on GitHub!
